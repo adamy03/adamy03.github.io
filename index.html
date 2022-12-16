@@ -17321,7 +17321,7 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now that we've establish numerical relationships in our data, let's have a look at the written reviews posted by students. We see in the reviews dataframe that, for each written review, there is a numerical rating attached to it. FINISH.</p>
+<p>Now that we've establish numerical relationships in our data, let's have a look at the written reviews posted by students. We see in the reviews dataframe that, for each written review, there is a numerical rating attached to it. We will use this to train a classification machine learning model.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17461,7 +17461,7 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We have now broken each review into a string that simplifies the language into components. The next step is to create a bag of words, meaning a vectorization of a string that counts the occurrences of a word.</p>
+<p>We have now broken each review into a string that simplifies the language into components. The next step is to create a bag of words, meaning a vectorization of a string that counts the occurrences of a word. This way, the text will be in a format the machine learning models can process.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17479,6 +17479,12 @@ Notes:
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To best train and test our machine learning model, we would need to split our dataset into a testing and training set to avoid overfitting.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17652,7 +17658,7 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Lets try a naiive bayes classifier next.</p>
+<p>The accuracy 0.47 of the model is 0.47, meaning the predictions were less than half the time correct. Lets try a naiive bayes classifier next.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17805,6 +17811,23 @@ Notes:
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This model performed worse in accuracy with a score of 0.26. With the two models we have chosen, both performed poorly in predicting the review's rating. Perhaps with a more robust model that takes into account sentiment or parts of speech (to name a few omitted features), would perform better.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Conclusion"><strong>Conclusion</strong><a class="anchor-link" href="#Conclusion">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Through this notebook, we were able to explore the ratings and reviews of undergraduate CMSC courses. We were able to extract data through the planetterp API and export them into a consolidated dataframe. From this, we performed analysis on relationships between grades and reviews for professor-course pairings. Furthermore, we determined the distribution of review values and computed a weighted score between number of reviews and rating for each pairing. From there, we statistically tested the linearity of GPA and rating, and did not find strong evidence supporting our assumptions. Finally, we performed NLP on the reviews in an attempt to understand the relationship between review language and rating.</p>
+
+</div>
 </div>
 </body>
 
