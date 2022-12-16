@@ -14298,7 +14298,7 @@ Prerequisites: Minimum C- in CMSC216 and CMSC250 <br></p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this notebook, we will be using data from planetterp analyze UMD course reviews for undergrad CS classes. We will be attempting to explore trends in course ratings, reviews, and grades.</p>
+<p>In this notebook, we will be using data from planetterp to analyze UMD course reviews for undergrad CS classes. Through the below analysis of ratings, reviews, and grades, we hope to gain an understanding in general sentiments of planetterp reviews and how this reflects in courses.</p>
 
 </div>
 </div>
@@ -14623,7 +14623,7 @@ The courses(department, reviews) pulls course data from a specified department a
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since we want to focus on undergraduate courses, we will exclude any course with any code larger than 500. We perform this by filtering the dataframe with a boolean condition on the course_number column. We also want to ensure that all professors present in the column are unique as to avoid redundancy (the api is not perfect and will at times return duplicates).</p>
+<p>Since we want to focus on undergraduate courses, we will exclude any course with any code larger than 500. We perform this by filtering the dataframe with a boolean condition on the course_number column. We also want to ensure that all professors present in the column are unique so as to avoid redundancy (the api is not perfect and will at times return duplicates).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15981,7 +15981,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From this format, we can retrieve the grade data for a course when givin a specific professor. Using the pandas apply() function, we will iterate through each row to compute the average GPA for the course. We will use <a href="https://www.testudo.umd.edu/gpa/index.html">UMD grade weighting</a> to convert string grades into numeric values. 'W' (waived) grades will be excluded. The average is then computed than appended to the new "grades" dataframe.</p>
+<p>From this format, we can retrieve the grade data for a course when given a specific professor. Using the pandas apply() function, we will iterate through each row to compute the average GPA for the course. We will use <a href="https://www.testudo.umd.edu/gpa/index.html">UMD grade weighting</a> to convert string grades into numeric values. 'W' (waived) grades will be excluded. The average is then computed and appended to the new "grades" dataframe.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16132,7 +16132,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now, with course, review, and grade data, we can combine all three types information into one dataframe. This will organize course data into professor and course "pairs". For instance, a professor might teach CMSC131, CMSC132, and CMSC216. Each of their courses will occupy a row in the new dataframe, which will also include their average GPA, reviews, number of reviews, and planetterp rating (of 5 stars) specific to the pairing.</p>
+<p>Now, with course, review, and grade data, we can combine all three types of information into one dataframe. This will organize course data into professor and course "pairs". For instance, a professor might teach CMSC131, CMSC132, and CMSC216. Each of their courses will occupy a row in the new dataframe, which will also include their average GPA, reviews, number of reviews, and planetterp rating (of 5 stars) specific to the pairing.</p>
 
 </div>
 </div>
@@ -16710,7 +16710,7 @@ We can explore this relationship using the <a href="https://matplotlib.org">matp
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's return to the original dataframe each the professor-course pair and examine how rating categories differ. We will assume that highly rated pairs are any with more than 3 stars, average pairs have a rating between 2 and 3 stars, and lowly rated pairs are considered below 2 stars.</p>
+<p>Let's return to the original dataframe of each professor-course pair and examine how rating categories differ. We will assume that highly rated pairs are any with more than 3 stars, average pairs have a rating between 2 and 3 stars, and lowly rated pairs are considered below 2 stars.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16732,7 +16732,7 @@ We can explore this relationship using the <a href="https://matplotlib.org">matp
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Using a bargrph, we can examine the difference in volume between the different strata of pairings.</p>
+<p>Using a bargraph, we can examine the difference in volume between the different strata of pairings.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16855,7 +16855,7 @@ We can explore this relationship using the <a href="https://matplotlib.org">matp
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Beyond the types of reviews, we can also look at more basic information such as the number of reviews each pair typically has. Since professors who teach lower level courses are more popular among undergraduates, we can expect to see some professors with much higher review counts compared to the majority of instructors. We will examine this through a histogram, that bins the professor-course pairs by the number of reviews they have. Below demonstrates how we can do this using the hist() function from matplotlib, which bins the data into 10 different categories.</p>
+<p>Beyond the types of reviews, we can also look at more basic information such as the number of reviews each pair typically has. Since professors who teach lower level courses are more popular among undergraduates, we can expect to see some professors with much higher review counts compared to the majority of instructors. We will examine this through a histogram that bins the professor-course pairs by the number of reviews they have. Below demonstrates how we can do this using the hist() function from matplotlib, which bins the data into 10 different categories.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16928,8 +16928,8 @@ We can explore this relationship using the <a href="https://matplotlib.org">matp
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since there is a high variance if the amount of reviews, we would like to determine a way to rank professors for certain courses that gives higher weight to professors with more reviews. In this case, we assume that professors with more high ratings and a large volume to reviews are weighted higher than one with high ratings and fewer reviews. Since the data is skewed, we will take the log of the number of reviews and multiply that by the rating:</p>
-<blockquote><p><em>weighted_review</em> = <em>log(no_reivews) </em> rating*</p>
+<p>Since there is a high variance in the amount of reviews, we would like to determine a way to rank professors for certain courses that gives higher weight to professors with more reviews. In this case, we assume that professors with more high ratings and a large volume of reviews are weighted higher than one with high ratings and fewer reviews. Since the data is skewed, we will take the log of the number of reviews and multiply that by the rating:</p>
+<blockquote><p><em>weighted_review</em> = <em>log(no_reviews) </em> rating*</p>
 </blockquote>
 
 </div>
@@ -17243,7 +17243,7 @@ $ H_{a} \neq 0 $ (correlation) <br></p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To make the linear model, we will be using the <a href="https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.OLS.html">orinary least squares</a> from the statsmodel API. The package also allows us to inspect the summary statistics to see the significance of our model.</p>
+<p>To make the linear model, we will be using the <a href="https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.OLS.html">ordinary least squares</a> from the statsmodel API. The package also allows us to inspect the summary statistics to see the significance of our model.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17314,7 +17314,7 @@ Dep. Variable:                 rating   R-squared:                       0.055
 Model:                            OLS   Adj. R-squared:                  0.048
 Method:                 Least Squares   F-statistic:                     8.526
 Date:                Fri, 16 Dec 2022   Prob (F-statistic):            0.00405
-Time:                        13:47:58   Log-Likelihood:                -214.36
+Time:                        18:36:09   Log-Likelihood:                -214.36
 No. Observations:                 149   AIC:                             432.7
 Df Residuals:                     147   BIC:                             438.7
 Df Model:                           1                                         
@@ -17355,7 +17355,7 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now that we've establish numerical relationships in our data, let's have a look at written reviews posted by students. We see in the reviews dataframe that for each written review, there is a numerical rating attached to it. We will use this to train a classification machine learning model to predict ratings based on written reviews.</p>
+<p>Now that we've established numerical relationships in our data, let's have a look at written reviews posted by students. We see in the reviews dataframe that for each written review, there is a numerical rating attached to it. We will use this to train a classification machine learning model to predict ratings based on written reviews.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17405,7 +17405,7 @@ Notes:
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In order to fit a NLP model onto the data we need to do a bunch of preprocessing, meaning we will need to format the text such that the algorithm we use can process the values easily. To do this, we will breakdown the text in the following fashion:</p>
 <ol>
-<li>Convert each word to lower case</li>
+<li>Convert each word to lowercase</li>
 <li>Remove punctuation</li>
 <li>Remove stop words (get rid of words such as "and", "is" )</li>
 <li>Execute stemming (remove prefixes and suffixes and get root word)</li>
@@ -17633,45 +17633,45 @@ Notes:
   <tbody>
     <tr>
       <th>precision</th>
-      <td>0.672414</td>
+      <td>0.734694</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.285714</td>
-      <td>0.506211</td>
-      <td>0.516291</td>
-      <td>0.292868</td>
-      <td>0.386290</td>
+      <td>0.250000</td>
+      <td>0.222222</td>
+      <td>0.485119</td>
+      <td>0.506266</td>
+      <td>0.338407</td>
+      <td>0.409620</td>
     </tr>
     <tr>
       <th>recall</th>
-      <td>0.534247</td>
+      <td>0.493151</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.057143</td>
+      <td>0.019608</td>
+      <td>0.028571</td>
       <td>0.970238</td>
-      <td>0.516291</td>
-      <td>0.312326</td>
-      <td>0.516291</td>
+      <td>0.506266</td>
+      <td>0.302314</td>
+      <td>0.506266</td>
     </tr>
     <tr>
       <th>f1-score</th>
-      <td>0.595420</td>
+      <td>0.590164</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.095238</td>
-      <td>0.665306</td>
-      <td>0.516291</td>
-      <td>0.271193</td>
-      <td>0.405774</td>
+      <td>0.036364</td>
+      <td>0.050633</td>
+      <td>0.646825</td>
+      <td>0.506266</td>
+      <td>0.264797</td>
+      <td>0.393853</td>
     </tr>
     <tr>
       <th>support</th>
       <td>73.000000</td>
       <td>37.0</td>
-      <td>51.0</td>
+      <td>51.000000</td>
       <td>70.000000</td>
       <td>168.000000</td>
-      <td>0.516291</td>
+      <td>0.506266</td>
       <td>399.000000</td>
       <td>399.000000</td>
     </tr>
@@ -17689,7 +17689,7 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From the classification report we see the accuracy of the model is 0.52, meaning the predictions were around than half the time correct. This is level of accuracy is not too great, so lets try a naiive bayes classifier and compare.</p>
+<p>From the classification report we see the accuracy of the model is 0.52, meaning the predictions were around more than half the time correct. This level of accuracy is not too great, so let's try a naive bayes classifier and compare.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17856,7 +17856,14 @@ Notes:
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Through this notebook, we were able to explore the ratings and reviews of undergraduate CMSC courses. To start, we extracted data through the planetterp API and consolidated reviews, grades, and course data into a dataframe. From this, we performed analysis on relationships between grades and reviews for professor-course pairings. We found that there seems to be a positive relationship between a pair's rating and the GPA of the course. We also determined the distribution of review values and computed a weighted score between number of reviews and rating for each pairing. From there, performed a test on the linearity of GPA and rating, and found evidence supporting our discovery in the analysis portion. Finally, we performed NLP on the reviews in an attempt to understand the relationship between review language and rating.</p>
+<p>Through this notebook, we were able to explore the ratings and reviews of undergraduate CMSC courses. To start, we extracted data through the planetterp API and consolidated reviews, grades, and course data into a dataframe. From this, we performed analysis on relationships between grades and reviews for professor-course pairings. We found that there seems to be a positive relationship between a pair's rating and the GPA of the course. We also determined the distribution of review values and computed a weighted score between the number of reviews and rating for each pairing. From there, performed a test on the linearity of GPA and rating, and found evidence supporting our discovery in the analysis portion. Finally, we performed NLP on the reviews in an attempt to understand the relationship between review language and rating. <br>
+Further work on this topic could pinpoint specific drivers in reviews (possible with a better NLP model) that can aid students in identifying significant features of a course or professor. These features might include workload, teaching style, and class structure, all of which cannot be represented through a 1-5 star review. Even further, an algorithm could even decide on an optimal schedule given a student's preferences.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>The code distribution and data used for this tutorial can be found <a href="https://github.com/adamy03/course_analysis">here</a>.</em></p>
 
 </div>
 </div>
