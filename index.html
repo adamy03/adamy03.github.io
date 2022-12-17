@@ -2,7 +2,6 @@
 title: CMSC Course Analysis
 layout: default
 ---
-
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -14282,14 +14281,14 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>At the University of Maryland, students often refer to schedule creating services such as <a href="https://umd.courseoff.com/">courseoff</a> or <a href="https://venus.umd.edu/">venus</a>. These sites take data from a class database known as <a href="https://www.testudo.umd.edu">testudo</a> and allows students to create interactive schedules that includes most pertinent information (professor, time, section, etc.) in one convenient location. These services are often paired with a student created review site known as <a href="planetterp.com">planetterp</a>. Unlike the aforementioned schedule services, planetterp does not offer a scheduling system: instead, it is a search engine for course/professor grades, reviews, and professor rating. The data is most regularly used to find the 'best' professors teaching a desired course for an upcoming term. <br> <br>
+<p>At the University of Maryland, students often refer to schedule creating services such as <a href="https://umd.courseoff.com/">courseoff</a> or <a href="https://venus.umd.edu/">venus</a> to build their term schedules for the semester. These sites pull data from a database known as <a href="https://www.testudo.umd.edu">testudo</a> allows students to create interactive schedules, housing all pertinent information (professor, time, section, etc.) in one convenient location. When it comes to selecting courses, these websites are regularly paired with <a href="planetterp.com">planetterp</a>, a student created review site. Unlike the aforementioned schedule services, planetterp does not offer a scheduling system. Instead, it acts much like a search engine for course/professor grades, reviews, and ratings. The data is often used to find the 'best' professors teaching a desired course for an upcoming term. <br> <br>
 Let's take a look at the data for the CMSC320 - Introduction to Data Science:</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Average GPA: 3.30 of <br>
+<blockquote><p>Average GPA: 3.30 <br>
 Fall 2022 Professors: [Maksym Morawsky, Elias Gonzales] <br>
 Prerequisites: Minimum C- in CMSC216 and CMSC250 <br></p>
 </blockquote>
@@ -14298,7 +14297,7 @@ Prerequisites: Minimum C- in CMSC216 and CMSC250 <br></p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this notebook, we will be using data from planetterp to analyze UMD course reviews for undergrad CS classes. Through the below analysis of ratings, reviews, and grades, we hope to gain an understanding in general sentiments of planetterp reviews and how this reflects in courses.</p>
+<p>For each course, planetterp provides general course information alongside student submitted reviews, which come in the form of ratings out of 5 and written reviews. In this notebook, we will be using data from planetterp to analyze UMD course reviews for undergrad CS classes. Through exploration of ratings, reviews, and grades, we hope to gain an understanding of general sentiments in planetterp reviews and how this reflects in courses.</p>
 
 </div>
 </div>
@@ -14347,6 +14346,11 @@ Prerequisites: Minimum C- in CMSC216 and CMSC250 <br></p>
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Constants"><strong>Constants</strong><a class="anchor-link" href="#Constants">&#182;</a></h3>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14377,8 +14381,8 @@ Prerequisites: Minimum C- in CMSC216 and CMSC250 <br></p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In order to analyze the course information, we will use the <a href="https://planetterp.com/api/">planetterp api</a>. The package provides numerous functions that will allow us to pull course information from their website. <br> 
-The courses(department, reviews) pulls course data from a specified department along with online reviews. Data is returned inside a dictionary with the following information:</p>
+<p>In order to analyze the course information, we will use the <a href="https://planetterp.com/api/">planetterp api</a>. The package provides numerous functions that will allow us to extract data from their site into this notebook. <br> 
+The courses(department, reviews) function pulls course data from a specified department along with online reviews. Data is returned inside a dictionary with the following information:</p>
 <ol>
 <li>Average GPA (float)</li>
 <li>Professors (list)</li>
@@ -16138,7 +16142,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We will start building this new dataframe with the grades data, which is already organized based on professor-course pairings. To get the reviews for a given professor, we will parse the reviews dataframe constructed earlier, to create a dataframe object to assign to a professor-course pair. The function accounts for pairings without reviews, and will return a nan-value accordingly.</p>
+<p>We will start building this new dataframe with the grades data, which is already organized based on professor-course pairings. To get the reviews for a given professor, we will parse the reviews dataframe constructed earlier to create a dataframe object to assign to a professor-course pair. The function accounts for pairings without reviews, and will return a nan-value accordingly.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
